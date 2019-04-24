@@ -2,6 +2,8 @@ import React from 'react'
 import axios from 'axios'
 import {Header, Container, Card, Image, Button} from 'semantic-ui-react'
 import Planet from './Planet'
+import {Link} from 'react-router-dom'
+
 
 
 
@@ -31,10 +33,12 @@ class People7 extends React.Component {
             <Image src='http://icons.iconarchive.com/icons/sensibleworld/starwars/1024/Darth-Vader-icon.png' />
             <Card.Header>{ peps.name }</Card.Header>
           </Card.Content>
+          <Link to='/planet'>
             <Planet homeworld={peps.homeworld}/>
             <Button>
               Planet
             </Button>
+            </Link>
         </Card>
       </Card.Group>
       
