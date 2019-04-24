@@ -16,7 +16,7 @@ import Planet from './Planet'
 
 class People extends React.Component {
 
-  state = {people: [], planet: []  }
+  state = {people: [],  }
 
   componentDidMount() {
     axios.get("https://swapi.co/api/people/")

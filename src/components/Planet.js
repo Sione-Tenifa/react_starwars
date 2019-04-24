@@ -6,7 +6,15 @@ import {Link} from 'react-router-dom'
 
 
 
+// const Planet = (homeworld) => (
+//   <div>
+//     <h2>{homeworld.name}</h2>
+    
+//   </div>
+// );
 
+
+// export default Planet;
 
 class Planet extends React.Component {
 
@@ -28,35 +36,18 @@ class Planet extends React.Component {
     const { planet, } = this.state
     return planet.map( peps => (
     
-       <Card.Group >      
-        <Card>
-          <Card.Content>
-            <Image src='http://icons.iconarchive.com/icons/sensibleworld/starwars/1024/Darth-Vader-icon.png' />
-            <Card.Header>{ peps.name }</Card.Header>
-          </Card.Content>
-        </Card>
-      </Card.Group>
+       <div>{peps.name}</div>
     )
     )
   }
+
     render () {
       return(
+        <>
        <div>{this.renderPlanet}</div>
+       </>
       )
     }
-}
-
-const styles = {
-  background: {
-    
-    height: "500vh",
-    width: '100vh',
-    // backgroundImage: src("https://wallpapercave.com/wp/wp2902991.jpg")
-    backgroundImage: `url(https://wallpapercave.com/wp/wp2902991.jpg)`
-  },
-  text: {
-    color: "white"
-  }
 }
 
 
