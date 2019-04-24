@@ -10,10 +10,11 @@ import People6 from './components/People6';
 import People7 from './components/People7';
 import People8 from './components/People8';
 import NoMatch from './components/NoMatch';
-import { Container, } from "semantic-ui-react";
+import { Container, Image} from "semantic-ui-react";
 
 const App = () => (
   <Fragment>
+    <Image src='https://wallpapercave.com/wp/wp2902991.jpg'/>
     <Container>
       <Switch>
         <Route exact path="/" component={Home} />

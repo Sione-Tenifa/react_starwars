@@ -29,6 +29,9 @@ class People6 extends React.Component {
             <Image src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSH1TZcgE-gwcMmbULgdZzH15BQYdhB_A0oA0MHLzaIsWvwO3qw' />
             <Card.Header>{ peps.name }</Card.Header>
           </Card.Content>
+          <Card.Description>
+              {peps.homeworld}
+            </Card.Description>
         </Card>
       </Card.Group>
       
@@ -41,6 +44,7 @@ class People6 extends React.Component {
           <br/>
           <div>{this.renderPerson()}</div>
         </Container>
+        
       )
     }
 }

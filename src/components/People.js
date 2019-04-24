@@ -14,13 +14,14 @@ import People8 from './People8'
 
 class People extends React.Component {
 
-  state = {people: [],  }
+  state = {people: [], planet: []  }
 
   componentDidMount() {
     axios.get("https://swapi.co/api/people/")
       .then( res => {
         this.setState({ 
           people: res.data.results,
+          planet: res.data.results.homeworld
           
         });
       })
@@ -31,12 +32,15 @@ class People extends React.Component {
   renderPerson = () => {
     const { people, } = this.state
     return people.map( peps => (
-      // <Container>
+    
        <Card.Group >      
         <Card>
           <Card.Content>
             <Image src='http://icons.iconarchive.com/icons/sensibleworld/starwars/1024/Darth-Vader-icon.png' />
             <Card.Header>{ peps.name }</Card.Header>
+            <Card.Description>
+              {peps.homeworld}
+            </Card.Description>
           </Card.Content>
         </Card>
       </Card.Group>
@@ -47,7 +51,8 @@ class People extends React.Component {
   }
     render () {
       return(
-        <Container>
+        <Container style={styles}>
+
               <Header as='h1'>People of Star wars</Header>
               <br/>
           <Grid>
@@ -82,6 +87,20 @@ class People extends React.Component {
       )
     }
 }
+
+const styles = {
+  background: {
+    backgroundColor: "#6E54A3",
+    height: "100vh",
+    width: '100vh',
+    // backgroundImage: src("https://wallpapercave.com/wp/wp2902991.jpg")
+    backgroundImage: `url(https://wallpapercave.com/wp/wp2902991.jpg)`
+  },
+  text: {
+    color: "white"
+  }
+}
+
 
 export default People 
                 

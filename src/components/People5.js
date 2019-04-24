@@ -30,6 +30,9 @@ class People5 extends React.Component {
             <Image src='http://icons.iconarchive.com/icons/sensibleworld/starwars/1024/Darth-Vader-icon.png' />
             <Card.Header>{ peps.name }</Card.Header>
           </Card.Content>
+          <Card.Description>
+              {peps.homeworld}
+            </Card.Description>
         </Card>
       </Card.Group>
       
