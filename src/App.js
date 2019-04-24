@@ -10,6 +10,7 @@ import People6 from './components/People6';
 import People7 from './components/People7';
 import People8 from './components/People8';
 import NoMatch from './components/NoMatch';
+import Planet from './components/Planet'
 import { Container, Image} from "semantic-ui-react";
 
 const App = () => (
@@ -26,6 +27,7 @@ const App = () => (
         <Route path="/people6" component={People6} />
         <Route path="/people7" component={People7} />
         <Route path="/people8" component={People8} />
+        <Route path="/planet" component={Planet} />
 
         <Route component={NoMatch} />
       </Switch>

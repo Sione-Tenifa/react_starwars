@@ -1,7 +1,7 @@
 import React from 'react'
 import axios from 'axios'
-import {Header, Container, Card, Image} from 'semantic-ui-react'
-
+import {Header, Container, Card, Image, Button} from 'semantic-ui-react'
+import Planet from './Planet'
 
 class People6 extends React.Component {
 
@@ -29,9 +29,10 @@ class People6 extends React.Component {
             <Image src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSH1TZcgE-gwcMmbULgdZzH15BQYdhB_A0oA0MHLzaIsWvwO3qw' />
             <Card.Header>{ peps.name }</Card.Header>
           </Card.Content>
-          <Card.Description>
-              {peps.homeworld}
-            </Card.Description>
+          <Planet homeworld={peps.homeworld}/>
+            <Button>
+              Planet
+            </Button>
         </Card>
       </Card.Group>
       
@@ -41,7 +42,7 @@ class People6 extends React.Component {
     render () {
       return(
         <Container>
-          <br/>
+      
           <div>{this.renderPerson()}</div>
         </Container>
         

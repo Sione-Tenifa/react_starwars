@@ -1,6 +1,6 @@
 import React from 'react'
 import axios from 'axios'
-import {Header, Container, Card, Image, Grid} from 'semantic-ui-react'
+import {Header, Container, Card, Image, Grid, Button} from 'semantic-ui-react'
 import People2 from './People2'
 import People3 from './People3'
 import People4 from './People4'
@@ -8,6 +8,8 @@ import People5 from './People5'
 import People6 from './People6'
 import People7 from './People7'
 import People8 from './People8'
+import {Link} from 'react-router-dom'
+import Planet from './Planet'
 
 
 
@@ -21,7 +23,7 @@ class People extends React.Component {
       .then( res => {
         this.setState({ 
           people: res.data.results,
-          planet: res.data.results.homeworld
+          
           
         });
       })
@@ -30,7 +32,8 @@ class People extends React.Component {
 
   
   renderPerson = () => {
-    const { people, } = this.state
+    const { people,} = this.state
+    
     return people.map( peps => (
     
        <Card.Group >      
@@ -38,13 +41,17 @@ class People extends React.Component {
           <Card.Content>
             <Image src='http://icons.iconarchive.com/icons/sensibleworld/starwars/1024/Darth-Vader-icon.png' />
             <Card.Header>{ peps.name }</Card.Header>
-            <Card.Description>
-              {peps.homeworld}
-            </Card.Description>
+            <Link to='/planet'>
+            <Planet homeworld={peps.homeworld}/>
+            <Button>
+              Planet
+            </Button>
+            </Link>
           </Card.Content>
         </Card>
       </Card.Group>
       
+
       
      )
    )
@@ -90,8 +97,8 @@ class People extends React.Component {
 
 const styles = {
   background: {
-    backgroundColor: "#6E54A3",
-    height: "100vh",
+    
+    height: "500vh",
     width: '100vh',
     // backgroundImage: src("https://wallpapercave.com/wp/wp2902991.jpg")
     backgroundImage: `url(https://wallpapercave.com/wp/wp2902991.jpg)`
